@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #171922;
+        }
+
+        .stage {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 34px;
+            padding: 56px 32px;
+        }
+
+        .cube {
+            position: relative;
+            width: 170px;
+            height: 170px;
+
+            /* 鼠标悬停时的动画 */
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+            
+            cursor: pointer;
+        }
+
+        /* hover 文字 */
+        .cube::after {
+            content: "hover";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            opacity: 0;
+
+            transition: opacity 0.3s ease;
+
+            pointer-events: none;
+        }
+
+        /* 鼠标滑过 */
+        .cube:hover {
+            transform: translateY(-10px);
+        }
+
+        .cube:hover::after {
+            opacity: 1;
+        }
+
+        /* ------------------- */
+        /* 第一个：橙红色方块 */
+        /* ------------------- */
+        .c1 {
+            background: linear-gradient(
+                135deg,
+                #ff984f,
+                #ff6464
+            );
+
+            border-radius: 0;
+
+            box-shadow:
+                0 10px 24px rgba(255, 94, 98, 0.35);
+        }
+
+        /* ------------------- */
+        /* 第二个：绿色圆角方块 */
+        /* ------------------- */
+        .c2 {
+            background: linear-gradient(
+                135deg,
+                #38d6a1,
+                #35c77d
+            );
+
+            border-radius: 11px;
+
+            box-shadow:
+                0 10px 24px rgba(39, 208, 145, 0.28);
+        }
+
+        /* ------------------- */
+        /* 第三个：紫色圆角方块 */
+        /* ------------------- */
+        .c3 {
+            background: linear-gradient(
+                135deg,
+                #b294b6,
+                #766795
+            );
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 10px 24px rgba(145, 118, 175, 0.35);
+        }
+
+        /* ------------------- */
+        /* 第四个：黄色圆形 */
+        /* ------------------- */
+        .c4 {
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #ffe256,
+                #ffab56
+            );
+
+            box-shadow:
+                0 10px 24px rgba(255, 167, 83, 0.35);
+        }
+
+        /* ------------------- */
+        /* 第五个：深绿色圆角方块 */
+        /* ------------------- */
+        .c5 {
+            background: linear-gradient(
+                135deg,
+                #518d6f,
+                #476d78
+            );
+
+            border-radius: 6px;
+
+            box-shadow:
+                0 10px 24px rgba(73, 125, 106, 0.3);
+        }
+
+        /* ------------------- */
+        /* 第六个：紫色圆形 */
+        /* ------------------- */
+        .c6 {
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #bc98c1,
+                #8f75a5
+            );
+
+            box-shadow:
+                0 10px 24px rgba(145, 118, 175, 0.35);
+        }
+
+        /* 统一的 hover 阴影 */
+        .cube:hover {
+            box-shadow: 0 0 24px rgba(255, 255, 255, 0.18);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stage">
+        <div class="cube c1"></div>
+        <div class="cube c2"></div>
+        <div class="cube c3"></div>
+        <div class="cube c4"></div>
+        <div class="cube c5"></div>
+        <div class="cube c6"></div>
+    </div>
+
+</body>
+</html>
